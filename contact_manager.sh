@@ -5,13 +5,11 @@ CONTACTS_FILE="contacts.txt"
 
 # Function to display the menu
 display_menu() {
-    clear
     echo "Contact Management System"
     echo "1. Create a New Contact"
     echo "2. Search Contacts"
     echo "3. Help"
     echo "4. Exit"
-    echo "Enter your choice:"
 }
 
 # Function to create a new contact
@@ -23,13 +21,18 @@ create_contact() {
 
     # Append the contact to the file
     echo "$first_name - $last_name - $email - $phone" >> "$CONTACTS_FILE"
-    echo "Contact added successfully!"
+    echo "Contact added"
 }
 
 # Function to search for contacts
 search_contact() {
+    search_contact() {
     read -p "Enter search query: " query
     grep -i "$query" "$CONTACTS_FILE"
+    echo "Press Enter to return to the main menu..."
+    read  
+    
+} 
 }
 
 # Main loop
@@ -43,21 +46,21 @@ while true; do
             ;;
         2)
             search_contact
-            ;;
+             ;;
         3)
-            echo "Contact Management System Help:"
-            echo "You can create a new contact by choosing option 1."
-            echo "You can search for contacts by choosing option 2."
-            echo "To exit the program, choose option 4."
+            echo "Help:"
+            echo "1- You can create a new contact"
+            echo "2- You can search for contacts"
+            echo "4- To exit the program"
             echo "Press Enter to continue..."
             read
             ;;
         4)
-            echo "Exiting Contact Management System."
+            echo "Exiting"
             exit 0
             ;;
         *)
-            echo "Invalid option. Please try again."
+            echo "Invalid option. Select one of the nnumbers: 1 - 2 - 3 - 4."
             ;;
     esac
 done
