@@ -6,7 +6,7 @@ CONTACTS_FILE="contacts.txt"
 # Function to display the menu
 display_menu() {
     echo "Contact Management System"
-    echo "1. Create a New Contact"
+    echo "1. Create a Contact"
     echo "2. Search Contacts"
     echo "3. Help"
     echo "4. Exit"
